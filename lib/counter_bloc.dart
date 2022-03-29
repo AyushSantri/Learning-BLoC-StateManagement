@@ -1,4 +1,8 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:async';
+
+enum CounterAction { Increment, Decrement, Reset }
 
 class CounterBloc {
   /* StreamController is like a pipe and whatever comes in is Sink (i.e, input) and
