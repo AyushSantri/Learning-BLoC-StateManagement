@@ -34,6 +34,8 @@ class CounterBloc {
       } else {
         counter = 0;
       }
+
+      counterSink.add(counter);
     });
   }
 }
