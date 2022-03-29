@@ -2,6 +2,8 @@
 
 import 'dart:async';
 
+/* Since event listener is listening to some event therefore it can't be of type int
+* It can  be anything, therefore we have created enum*/
 enum CounterAction { Increment, Decrement, Reset }
 
 class CounterBloc {
@@ -17,7 +19,7 @@ class CounterBloc {
   Stream<int> get counterStream => _stateStreamController.stream;
 
   //Creating event controller to listen to the events of button
-  final _eventController = StreamController<int>();
-  StreamSink<int> get eventSink => _eventController.sink;
-  Stream<int> get eventStream => _eventController.stream;
+  final _eventController = StreamController<CounterAction>();
+  StreamSink<CounterAction> get eventSink => _eventController.sink;
+  Stream<CounterAction> get eventStream => _eventController.stream;
 }
