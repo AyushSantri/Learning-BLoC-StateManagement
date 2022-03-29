@@ -65,9 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _counter++;
-          //added the input or sink to our stream controller
-          counterBloc.counterSink.add(_counter);
+          counterBloc.eventSink.add(CounterAction.Increment);
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
