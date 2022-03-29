@@ -24,5 +24,16 @@ class CounterBloc {
   Stream<CounterAction> get eventStream => _eventController.stream;
 
   /*as soon as instance of class is created this constructor will be called*/
-  CounterBloc() {}
+  CounterBloc() {
+    int counter = 0;
+    eventStream.listen((event) {
+      if (event == CounterAction.Increment) {
+        counter++;
+      } else if (event == CounterAction.Decrement) {
+        counter++;
+      } else {
+        counter = 0;
+      }
+    });
+  }
 }
