@@ -47,9 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+
+            /*after getting input from sink we want our output to get displayed
+            * and since our output is stream we are using stream builder*/
+
+            StreamBuilder(
+              stream: counterBloc.counterStream,
+              builder: (context, snapshot) {
+                return Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              },
             ),
           ],
         ),
