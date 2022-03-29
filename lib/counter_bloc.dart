@@ -22,4 +22,7 @@ class CounterBloc {
   final _eventController = StreamController<CounterAction>();
   StreamSink<CounterAction> get eventSink => _eventController.sink;
   Stream<CounterAction> get eventStream => _eventController.stream;
+
+  /*as soon as instance of class is created this constructor will be called*/
+  CounterBloc() {}
 }
