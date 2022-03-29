@@ -11,4 +11,9 @@ class CounterBloc {
 
   //getting stream/output form streamController
   Stream<int> get counterStream => _stateStreamController.stream;
+
+  //Creating event controller to listen to the events of button
+  final _eventController = StreamController<int>();
+  StreamSink<int> get eventSink => _eventController.sink;
+  Stream<int> get eventStream => _eventController.stream;
 }
