@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_bloc_state_management/counter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final counterBloc = CounterBloc();
 
   void _incrementCounter() {
     setState(() {
