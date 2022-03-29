@@ -5,4 +5,7 @@ class CounterBloc {
   * whatever goes out is stream (i.e, output)*/
 
   final stateStreamController = StreamController<int>();
+
+  //from StreamController we are asking for sink and datatype is StreamSink
+  StreamSink<int> get counterSink => stateStreamController.sink;
 }
