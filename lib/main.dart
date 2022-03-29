@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final counterBloc = CounterBloc();
 
   @override
@@ -53,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             StreamBuilder(
               stream: counterBloc.counterStream,
+              initialData: 0,
               builder: (context, snapshot) {
                 return Text(
                   '${snapshot.data}',
